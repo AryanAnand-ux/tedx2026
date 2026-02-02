@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tedx-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tedx-red-dark);
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--tedx-red);
+  color: white;
+}
+
+/* TEDxJUET 2025 - Pratibimb Design System */
+
+@layer base {
+  :root {
+    /* Core TEDx Colors */
+    --tedx-red: 0 100% 46%;
+    --tedx-red-dark: 0 100% 36%;
+    --tedx-red-light: 0 100% 56%;
+    
+    /* Neutrals */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary = TEDx Red */
+    --primary: 0 100% 46%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary = Dark Gray */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    /* Accent */
+    --accent: 0 100% 46%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 100% 46%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 100% 46% / 0.9), hsl(0 0% 0% / 0.95));
+    --gradient-red-glow: radial-gradient(ellipse at center, hsl(0 100% 46% / 0.3), transparent 70%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 4%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(0 100% 46% / 0.4);
+    --shadow-card: 0 20px 40px hsl(0 0% 0% / 0.5);
+    --shadow-button: 0 4px 20px hsl(0 100% 46% / 0.4);
+    
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-primary via-red-400 to-primary bg-clip-text text-transparent;
+  }
+
+  .glow-red {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .red-glow-bg {
+    background: var(--gradient-red-glow);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
