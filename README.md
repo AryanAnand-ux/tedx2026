@@ -36,8 +36,8 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the valid repo**
     ```sh
-    git clone <your-repo-url>
-    cd tedxjuet-hub
+    git clone https://github.com/AryanAnand-ux/tedx2026.git
+    cd tedx2026
     ```
 
 2.  **Install dependencies**
@@ -71,4 +71,4 @@ src/
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+- Distributed under the MIT License. See `LICENSE` for more information.
