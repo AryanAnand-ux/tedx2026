@@ -1,4 +1,4 @@
-# TEDxJUET Hub
+# TEDx2026 JUET
 
 A modern, dynamic single-page application for the TEDxJUET event, built to showcase speakers, partners, and event details with a premium user experience.
 
